@@ -12,7 +12,7 @@ if choice == 1:
 
     isReal = None
     print("Vertex form:")
-    print(f"y = {a}(x - {h})^2 + {k}")
+    print("y = "+str(a)+"(x - "+str(h)+")^2 + "+str(k))
 
     if (-k / a < 0):
         print("no x-intercepts")
@@ -40,26 +40,26 @@ if choice == 1:
 
     if a > 0:
         print("Minimum: ", k)
-        print("Image:", f"[{k}, inf[")
+        print("Image:", "["+str(k)+", inf[")
         if isReal:
-            print("Positive:", f"]-inf, {x1}] U [{x2}, inf[")
-            print("Negative:", f"[{x1}, {x2}]")
+            print("Positive:", "]-inf, "+str(x1)+"] U ["+str(x2)+", inf[")
+            print("Negative:", "["+str(x1)+", "+str(x2)+"]")
         else:
-            print("Positive:", f"xER")
-            print("Negative:", f"none")
-        print(f"Rising: [{h}, inf[")
-        print(f"Falling: ]-inf, {h}]")
+            print("Positive:", "xER")
+            print("Negative:", "none")
+        print("Rising: ["+str(h)+", inf[")
+        print("Falling: ]-inf, "+str(h)+"]")
     elif a < 0:
         print("Maximum: ", k)
-        print("Image: ", f"]-inf, {k}]")
+        print("Image: ", f"]-inf, "+str(k)+"]")
         if (isReal):
-            print("Positive:", f"[{x1}, {x2}]")
-            print("Negative:", f"]-inf, {x1}] U [{x2}, inf[")
+            print("Positive:", f"["+str(x1)+", "+str(x2)+"]")
+            print("Negative:", f"]-inf, "+str(x1)+"] U ["+str(x2)+", inf[")
         else:
             print("Positive:", f"none")
             print("Negative:", f"xER")
-        print(f"Rising: ]-inf, {h}]")
-        print(f"Falling: [{h}, inf[")
+        print(f"Rising: ]-inf, "+str(h)+"]")
+        print(f"Falling: ["+str(h)+", inf[")
     else:
         print("No minimum or maximum!")
     if x1 != None and x2 != None:
@@ -77,7 +77,7 @@ elif choice==2:
 
     isReal = None
     print("General form:")
-    print(f"y = {a}x^2 + {b}x + {c}")
+    print("y = "+str(a)+"x^2 + "+str(b)+"x + "+str(c))
 
     if (b ** 2 - 4 * a * c < 0):
         print("no x-intercepts")
@@ -106,29 +106,29 @@ elif choice==2:
     print("Opens:", "up" if a > 0 else "down")
 
     if a > 0:
-        print("Minimum: ", k)
-        print("Image:", f"[{k}, inf[")
+        print("Minimum: " + str(k))
+        print("Image: [" + str(k) + ", inf[")
         if isReal:
-            print("Positive:", f"]-inf, {x1}] U [{x2}, inf[")
-            print("Negative:", f"[{x1}, {x2}]")
+            print("Positive: ]-inf, " + str(x1) + "] U [" + str(x2) + ", inf[")
+            print("Negative: [" + str(x1) + ", " + str(x2) + "]")
         else:
-            print("Positive:", f"xER")
-            print("Negative:", f"none")
-        print(f"Rising: [{h}, inf[")
-        print(f"Falling: ]-inf, {h}]")
+            print("Positive: xER")
+            print("Negative: none")
+        print("Rising: [" + str(h) + ", inf[")
+        print("Falling: ]-inf, " + str(h) + "]")
     elif a < 0:
-        print("Maximum: ", k)
-        print("Image: ", f"]-inf, {k}]")
-        if (isReal):
-            print("Positive:", f"[{x1}, {x2}]")
-elif choice ==3:
-    a = float(input("Enter a: "))
-    b = float(input("Enter x1: "))
-    c = float(input("Enter x2: "))
+        print("Maximum: " + str(k))
+        print("Image: ]-inf, " + str(k) + "]")
+        if isReal:
+            print("Positive: [" + str(x1) + ", " + str(x2) + "]")
+    elif choice == 3:
+        a = float(input("Enter a: "))
+        b = float(input("Enter x1: "))
+        c = float(input("Enter x2: "))
 
-    isReal = None
-    print("Factorized form:")
-    print(f"y = {a}(x - {b})(x - {c})")
+        isReal = None
+        print("Factorized form:")
+        print("y = " + str(a) + "(x - " + str(b) + ")(x - " + str(c) + ")")
 
     if b == c:
         print("x-intercept (only one): ", b)
@@ -144,18 +144,18 @@ elif choice ==3:
     print("Opens:", "up" if a > 0 else "down")
 
     if a > 0:
-        print("Minimum: ", k)
-        print("Image:", f"[{k}, inf[")
-        print("Positive:", f"]-inf, {b}] U [{c}, inf[")
-        print("Negative:", f"[{b}, {c}]")
-        print(f"Rising: [{h}, inf[")
-        print(f"Falling: ]-inf, {h}]")
+        print("Minimum: " + str(k))
+        print("Image: " + "[" + str(k) + ", inf[")
+        print("Positive: " + "]-inf, " + str(b) + "] U [" + str(c) + ", inf[")
+        print("Negative: " + "[" + str(b) + ", " + str(c) + "]")
+        print("Rising: [" + str(h) + ", inf[")
+        print("Falling: ]-inf, " + str(h) + "]")
     elif a < 0:
-        print("Maximum: ", k)
-        print("Image: ", f"]-inf, {k}]")
-        print("Positive:", f"[{b}, {c}]")
-        print("Negative:", f"]-inf, {b}] U [{c}, inf[")
-        print(f"Rising: ]-inf, {h}]")
-        print(f"Falling: [{h}, inf[")
+        print("Maximum: " + str(k))
+        print("Image: " + "]-inf, " + str(k) + "]")
+        print("Positive: [" + str(b) + ", " + str(c) + "]")
+        print("Negative: ]-inf, " + str(b) + "] U [" + str(c) + ", inf[")
+        print("Rising: ]-inf, " + str(h) + "]")
+        print("Falling: [" + str(h) + ", inf[")
     else:
         print("No minimum or maximum!")
