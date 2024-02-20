@@ -1,0 +1,161 @@
+print("Choose input")
+print("1. as vertex form")
+print("2. as general form")
+print("3. as factorized form")
+
+choice = int(input("Enter choice: "))
+
+if choice == 1:
+    a = float(input("Enter a: "))
+    h = float(input("Enter h: "))
+    k = float(input("Enter k: "))
+
+    isReal = None
+    print("Vertex form:")
+    print(f"y = {a}(x - {h})^2 + {k}")
+
+    if (-k / a < 0):
+        print("no x-intercepts")
+        isReal = False
+        x1 = None
+        x2 = None
+    else:
+        x1 = h + (-k / a) ** 0.5
+        x2 = h - (-k / a) ** 0.5
+        isReal = True
+
+    if x1 !=None or x2 != None:
+        if x1 > x2:
+            x1, x2 = x2, x1
+        if x1 == x2:
+            print("x-intercept (only one): ", x1)
+        else:
+            print("x-intercepts: ", x1, x2)
+
+        yInt = (0 - h) ** 2 * a + k
+        print("y-intercept: (0,", yInt, ")")
+
+    print("Vertex:", (h, k))
+    print("Opens:", "up" if a > 0 else "down")
+
+    if a > 0:
+        print("Minimum: ", k)
+        print("Image:", f"[{k}, inf[")
+        if isReal:
+            print("Positive:", f"]-inf, {x1}] U [{x2}, inf[")
+            print("Negative:", f"[{x1}, {x2}]")
+        else:
+            print("Positive:", f"xER")
+            print("Negative:", f"none")
+        print(f"Rising: [{h}, inf[")
+        print(f"Falling: ]-inf, {h}]")
+    elif a < 0:
+        print("Maximum: ", k)
+        print("Image: ", f"]-inf, {k}]")
+        if (isReal):
+            print("Positive:", f"[{x1}, {x2}]")
+            print("Negative:", f"]-inf, {x1}] U [{x2}, inf[")
+        else:
+            print("Positive:", f"none")
+            print("Negative:", f"xER")
+        print(f"Rising: ]-inf, {h}]")
+        print(f"Falling: [{h}, inf[")
+    else:
+        print("No minimum or maximum!")
+    if x1 != None and x2 != None:
+        print("Factorised form: ", a, "(x -", x1, ")(x -", x2, ")")
+    elif x1 != None:
+        print("Factorised form: ", a, "(x -", x1, ")^2")
+    elif x2 != None:
+        print("Factorised form: ", a, "(x -", x2, ")^2")
+    else:
+        print("No factorised form")
+elif choice==2:
+    a = float(input("Enter a: "))
+    b = float(input("Enter b: "))
+    c = float(input("Enter c: "))
+
+    isReal = None
+    print("General form:")
+    print(f"y = {a}x^2 + {b}x + {c}")
+
+    if (b ** 2 - 4 * a * c < 0):
+        print("no x-intercepts")
+        isReal = False
+        x1 = None
+        x2 = None
+    else:
+        x1 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+        x2 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+        isReal = True
+
+    if x1 != None or x2 != None:
+        if x1 > x2:
+            x1, x2 = x2, x1
+        if x1 == x2:
+            print("x-intercept (only one): ", x1)
+        else:
+            print("x-intercepts: ", x1, x2)
+
+        yInt = c
+        print("y-intercept: (0,", yInt, ")")
+
+    h = -b / (2 * a)
+    k = a * h ** 2 + b * h + c
+    print("Vertex:", (h, k))
+    print("Opens:", "up" if a > 0 else "down")
+
+    if a > 0:
+        print("Minimum: ", k)
+        print("Image:", f"[{k}, inf[")
+        if isReal:
+            print("Positive:", f"]-inf, {x1}] U [{x2}, inf[")
+            print("Negative:", f"[{x1}, {x2}]")
+        else:
+            print("Positive:", f"xER")
+            print("Negative:", f"none")
+        print(f"Rising: [{h}, inf[")
+        print(f"Falling: ]-inf, {h}]")
+    elif a < 0:
+        print("Maximum: ", k)
+        print("Image: ", f"]-inf, {k}]")
+        if (isReal):
+            print("Positive:", f"[{x1}, {x2}]")
+elif choice ==3:
+    a = float(input("Enter a: "))
+    b = float(input("Enter x1: "))
+    c = float(input("Enter x2: "))
+
+    isReal = None
+    print("Factorized form:")
+    print(f"y = {a}(x - {b})(x - {c})")
+
+    if b == c:
+        print("x-intercept (only one): ", b)
+    else:
+        print("x-intercepts: ", b, c)
+
+    yInt = a * b * c
+    print("y-intercept: (0,", yInt, ")")
+
+    h = (b + c) / 2
+    k = a*(h-b)*(h-c)
+    print("Vertex:", (h, k))
+    print("Opens:", "up" if a > 0 else "down")
+
+    if a > 0:
+        print("Minimum: ", k)
+        print("Image:", f"[{k}, inf[")
+        print("Positive:", f"]-inf, {b}] U [{c}, inf[")
+        print("Negative:", f"[{b}, {c}]")
+        print(f"Rising: [{h}, inf[")
+        print(f"Falling: ]-inf, {h}]")
+    elif a < 0:
+        print("Maximum: ", k)
+        print("Image: ", f"]-inf, {k}]")
+        print("Positive:", f"[{b}, {c}]")
+        print("Negative:", f"]-inf, {b}] U [{c}, inf[")
+        print(f"Rising: ]-inf, {h}]")
+        print(f"Falling: [{h}, inf[")
+    else:
+        print("No minimum or maximum!")
