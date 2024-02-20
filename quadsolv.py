@@ -51,15 +51,15 @@ if choice == 1:
         print("Falling: ]-inf, "+str(h)+"]")
     elif a < 0:
         print("Maximum: ", k)
-        print("Image: ", f"]-inf, "+str(k)+"]")
+        print("Image: ", "]-inf, "+str(k)+"]")
         if (isReal):
-            print("Positive:", f"["+str(x1)+", "+str(x2)+"]")
-            print("Negative:", f"]-inf, "+str(x1)+"] U ["+str(x2)+", inf[")
+            print("Positive:", "["+str(x1)+", "+str(x2)+"]")
+            print("Negative:", "]-inf, "+str(x1)+"] U ["+str(x2)+", inf[")
         else:
-            print("Positive:", f"none")
-            print("Negative:", f"xER")
-        print(f"Rising: ]-inf, "+str(h)+"]")
-        print(f"Falling: ["+str(h)+", inf[")
+            print("Positive:", "none")
+            print("Negative:", "xER")
+        print("Rising: ]-inf, "+str(h)+"]")
+        print("Falling: ["+str(h)+", inf[")
     else:
         print("No minimum or maximum!")
     if x1 != None and x2 != None:
