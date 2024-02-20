@@ -64,6 +64,7 @@ if choice == 1:
         print("No minimum or maximum!")
     if x1 != None and x2 != None:
         print("Factorised form: ", a, "(x -", x1, ")(x -", x2, ")")
+        print("General form: ", a, "x^2 +", -a * (x1 + x2), "x +", a * x1 * x2)
     elif x1 != None:
         print("Factorised form: ", a, "(x -", x1, ")^2")
     elif x2 != None:
@@ -121,6 +122,9 @@ elif choice==2:
         print("Image: ]-inf, " + str(k) + "]")
         if isReal:
             print("Positive: [" + str(x1) + ", " + str(x2) + "]")
+    if isReal:
+        print("Vertex form: ", a, "(x -", h, ")^2 +", k)
+        print("Factorised form: ", a, "(x -", x1, ")(x -", x2, ")")
 elif choice == 3:
     a = float(input("Enter a: "))
     b = float(input("Enter x1: "))
@@ -159,3 +163,9 @@ elif choice == 3:
         print("Falling: [" + str(h) + ", inf[")
     else:
         print("No minimum or maximum!")
+    if b != c:
+        print("General form: ", a, "x^2 +", -a * (b + c), "x +", a * b * c)
+        print("Vertex form: ", a, "(x -", h, ")^2 +", k)
+    else:
+        print("General form: ", a, "(x -", b, ")^2")
+        print("Vertex form: ", a, "(x -", b, ")^2 +", k)
