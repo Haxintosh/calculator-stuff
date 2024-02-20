@@ -121,14 +121,14 @@ elif choice==2:
         print("Image: ]-inf, " + str(k) + "]")
         if isReal:
             print("Positive: [" + str(x1) + ", " + str(x2) + "]")
-    elif choice == 3:
-        a = float(input("Enter a: "))
-        b = float(input("Enter x1: "))
-        c = float(input("Enter x2: "))
+elif choice == 3:
+    a = float(input("Enter a: "))
+    b = float(input("Enter x1: "))
+    c = float(input("Enter x2: "))
 
-        isReal = None
-        print("Factorized form:")
-        print("y = " + str(a) + "(x - " + str(b) + ")(x - " + str(c) + ")")
+    isReal = None
+    print("Factorized form:")
+    print("y = " + str(a) + "(x - " + str(b) + ")(x - " + str(c) + ")")
 
     if b == c:
         print("x-intercept (only one): ", b)
